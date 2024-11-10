@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="scrollbar-gutter: auto" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="p-8">
+    <div
+      class="contain flex justify-between max-w-screen-sm border-4 rounded-md border-slate-700 p-4 items-center mx-auto my-auto"
+    >
+      <div class="title">
+        <img
+          class="max-w-xl max-[380px]:w-28"
+          src="./img/tipa-logo.svg"
+          alt=""
+        />
+      </div>
+
+      <div
+        class="score flex flex-col justify-center text-center pt-3 pb-3 pl-5 pr-5 rounded-md bg-white max-[340px]: w-16"
+      >
+        <div
+          class="score__title font-Barlow uppercase font-semibold relative -left-4"
+        >
+          score
+        </div>
+        <div class="score__number">0</div>
+      </div>
+    </div>
+
+    <button
+      class="btn absolute bottom-10 right-20 btn-outline btn-primary tracking-widest max-[450px]:right-36 max-[370px]:right-32 max-[330px]:right-24"
+      onclick="my_modal_1.showModal()"
+    >
+      RULES
+    </button>
+
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <img class="ml-auto mr-auto mt-16" src="./img/rule-basic.svg" alt="" />
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn btn-outline btn-primary">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <div
+      class="relative w-96 ml-auto mr-auto max-[415px]:w-80 max-[350px]:w-64"
+    >
+      <button
+        class="absolute right-0 -top-12 w-44 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:right-12 max-[415px]:right-0 max-[350px]:right-0 max-[350px]:w-24 max-[350px]:-top-5"
+      >
+        <img src="./img/scissors.svg" alt="" />
+      </button>
+
+      <button
+        class="absolute w-44 -top-12 left-0 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:left-12 max-[415px]:left-0 max-[350px]:w-24 max-[350px]:-top-5"
+      >
+        <img src="./img/paper.svg" alt="" />
+      </button>
+
+      <button
+        class="absolute right-24 top-36 w-44 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:right-32 max-[490px]:top-28 max-[415px]:right-24 max-[350px]:w-24 max-[350px]:top-24 max-[350px]:right-20"
+      >
+        <img src="./img/rock.svg" alt="" />
+      </button>
+
+      <img
+        class="ml-auto mr-auto mt-32 max-[490px]:w-52"
+        src="./img/triangle.svg"
+        alt=""
+      />
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
