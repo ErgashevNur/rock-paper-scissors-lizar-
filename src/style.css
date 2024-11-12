@@ -23,32 +23,6 @@ body {
   width: 100%;
   overflow: hidden;
 }
-/* 
-.contain {
-  border: 3px solid var(--HeaderOutline);
-  width: 300px;
-  margin: 2.5rem auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-} */
-
-/* .score { */
-/* color: black;
-  width: 80px;
-  height: 70px;
-  background-color: white;
-  font-family: "Barlow";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  border-radius: 4px;
-  padding: 2px 8px;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
-} */
 
 .score__title {
   text-transform: uppercase;
@@ -61,10 +35,4 @@ body {
   margin-top: -6px;
   color: var(--darkText);
   font-size: 2.5rem;
-}
-
-.ImageHuman {
-  width: 198px;
-  height: 198px;
-  border-radius: 50%;
 }

@@ -94,7 +94,7 @@ icons.forEach((icon) => {
       setTimeout(() => {
         ai.classList.remove("animate-bounce");
       }, 2500);
-      human.style.boxShadow = "1px 3px 0px 19px rgba(254,246,246,0.2)";
+      ai.style.boxShadow = "1px 3px 0px 19px rgba(254,246,246,0.2)";
       if ((num = 0)) {
         num;
       } else if (num > 0) {
@@ -110,7 +110,6 @@ let score = parseInt(localStorage.getItem("score")) || 0;
 schot.textContent = score;
 
 refreshBtn.addEventListener("click", () => {
-  schot.textContent = score;
-
-  hiddenNav.style.flex;
+  hiddenNav.classList.remove("block");
+  buttonBox.classList.add("hidden");
 });

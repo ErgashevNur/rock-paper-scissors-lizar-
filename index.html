@@ -23,7 +23,7 @@
       href="./favicon_io/favicon-16x16.png"
     />
     <link rel="manifest" href="./favicon_io/site.webmanifest" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,13 +66,6 @@
         <div class="score__number">0</div>
       </div>
     </div>
-
-    <button
-      class="btn absolute bottom-10 right-20 btn-outline btn-primary tracking-widest max-[450px]:right-36 max-[370px]:right-32 max-[330px]:right-24"
-      onclick="my_modal_1.showModal()"
-    >
-      RULES
-    </button>
 
     <dialog id="my_modal_1" class="modal">
       <div class="modal-box">
@@ -121,16 +114,18 @@
     <section id="hidden-nav" class="hidden">
       <!-- <div class="relative w-full"> -->
       <div
-        class="hidd w-96 flex text-center justify-center items-center text-white p-4 rounded mt-20 gap-36 mx-auto sm:w-40"
+        class="hidd w-96 flex text-center justify-center items-center text-white p-4 rounded mt-20 gap-36 mx-auto max-[800px]:gap-32 max-[770px]:gap-28 max-[730px]:gap-24 max-[690px]:gap-20 max-[650px]:gap-16 max-[420px]:p-0 max-[420px]:w-28"
       >
         <img
           id="ImageHuman"
-          class="w-48 h-48 rounded-full"
+          class="w-48 h-48 rounded-full max-[600px]:w-28 max-[600px]:h-28"
           src=""
           alt="Human Image"
         />
 
-        <div class="gap-10 flex flex-col items-center">
+        <div
+          class="gap-10 flex flex-col items-center max-[470px]:absolute max-[470px]:bottom-28 max-[470px]:gap-7"
+        >
           <h3 id="Result" class="font-mono"></h3>
           <button id="refresh-btn" class="btn btn-outline btn-primary">
             <i class="fa-solid fa-arrows-rotate"></i>
@@ -140,7 +135,7 @@
 
         <img
           id="ImageAi"
-          class="w-48 h-48 rounded-full"
+          class="w-48 h-48 rounded-full max-[600px]:w-28 max-[600px]:h-28"
           src=""
           alt="AI Image"
         />
