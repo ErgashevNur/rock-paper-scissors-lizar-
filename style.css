@@ -62,3 +62,9 @@ body {
   color: var(--darkText);
   font-size: 2.5rem;
 }
+
+.ImageHuman {
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+}

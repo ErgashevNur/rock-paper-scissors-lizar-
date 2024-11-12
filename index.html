@@ -33,6 +33,11 @@
     />
 
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
@@ -81,32 +86,67 @@
     </dialog>
 
     <div
-      class="relative w-96 ml-auto mr-auto max-[415px]:w-80 max-[350px]:w-64"
+      class="button-box relative w-96 ml-auto mr-auto max-[415px]:w-80 max-[350px]:w-64"
     >
       <button
-        class="absolute right-0 -top-12 w-44 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:right-12 max-[415px]:right-0 max-[350px]:right-0 max-[350px]:w-24 max-[350px]:-top-5"
+        class="NanBox absolute right-0 -top-12 w-44 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:right-12 max-[415px]:right-0 max-[350px]:right-0 max-[350px]:w-24 max-[350px]:-top-5"
       >
-        <img src="./img/scissors.svg" alt="" />
+        <img
+          src="./img/scissors.svg"
+          alt="Scissors"
+          data-info="img/scissors.svg"
+        />
       </button>
 
       <button
-        class="absolute w-44 -top-12 left-0 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:left-12 max-[415px]:left-0 max-[350px]:w-24 max-[350px]:-top-5"
+        class="NanBox absolute w-44 -top-12 left-0 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:left-12 max-[415px]:left-0 max-[350px]:w-24 max-[350px]:-top-5"
       >
-        <img src="./img/paper.svg" alt="" />
+        <img src="./img/paper.svg" alt="Paper" data-info="img/paper.svg" />
       </button>
 
       <button
-        class="absolute right-24 top-36 w-44 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:right-32 max-[490px]:top-28 max-[415px]:right-24 max-[350px]:w-24 max-[350px]:top-24 max-[350px]:right-20"
+        class="NanBox absolute right-24 top-36 w-44 transform transition-transform duration-100 active:scale-90 max-[490px]:w-32 max-[490px]:right-32 max-[490px]:top-28 max-[415px]:right-24 max-[350px]:w-24 max-[350px]:top-24 max-[350px]:right-20"
       >
-        <img src="./img/rock.svg" alt="" />
+        <img src="./img/rock.svg" alt="Rock" data-info="img/rock.svg" />
       </button>
 
       <img
         class="ml-auto mr-auto mt-32 max-[490px]:w-52"
         src="./img/triangle.svg"
-        alt=""
+        alt="Triangle"
       />
     </div>
+
+    <!-- Hidden section ni main section -->
+    <section id="hidden-nav" class="hidden">
+      <!-- <div class="relative w-full"> -->
+      <div
+        class="hidd w-96 flex text-center justify-center items-center text-white p-4 rounded mt-20 gap-36 mx-auto sm:w-40"
+      >
+        <img
+          id="ImageHuman"
+          class="w-48 h-48 rounded-full"
+          src=""
+          alt="Human Image"
+        />
+
+        <div class="gap-10 flex flex-col items-center">
+          <h3 id="Result" class="font-mono"></h3>
+          <button id="refresh-btn" class="btn btn-outline btn-primary">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            Refresh
+          </button>
+        </div>
+
+        <img
+          id="ImageAi"
+          class="w-48 h-48 rounded-full"
+          src=""
+          alt="AI Image"
+        />
+      </div>
+      <!-- </div> -->
+    </section>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./app.js"></script>
