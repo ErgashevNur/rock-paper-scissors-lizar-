@@ -18,32 +18,34 @@ const [scissors, rock, paper] = [
   `img/paper.svg`,
 ];
 
-const aiHands = () => {
-  const hands = [scissors, rock, paper];
-  const randomIndex = Math.round(Math.random() * (hands.length - 1));
-  return hands[randomIndex];
-};
+let robot;
 
-const robot = aiHands();
-ai.src = robot;
+icons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const aiHands = () => {
+      const hands = [scissors, rock, paper];
+      const randomIndex = Math.floor(Math.random() * hands.length);
+      return hands[randomIndex];
+    };
 
-//Tekshirish
-let num = 0;
-let result = "";
+    robot = aiHands();
+    ai.src = robot;
 
-icons.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    buttonBox.classList.add("hidden");
-    hiddenNav.classList.remove("hidden");
+    buttonBox.style.display = "none";
+    hiddenNav.style.display = "block";
 
-    choice = icon.querySelector("img").getAttribute("data-info");
+    refreshBtn.addEventListener("click", () => {
+      buttonBox.style.display = "block";
+      hiddenNav.style.display = "none";
+    });
+
+    const choice = button.querySelector("img").getAttribute("data-info");
     human.src = choice;
-    voice = choice;
+    const voice = choice;
 
     console.log(voice);
-    console.log(robot);
 
-    if (voice == robot) {
+    if (voice === robot) {
       result = "DRAW!";
       human.classList.add("animate-bounce");
       ai.classList.add("animate-bounce");
@@ -54,38 +56,19 @@ icons.forEach((icon) => {
       setTimeout(() => {
         ai.classList.remove("animate-bounce");
       }, 2500);
-    } else if (voice == "img/scissors.svg" && robot == "img/paper.svg") {
+    } else if (
+      (voice === scissors && robot === paper) ||
+      (voice === paper && robot === rock) ||
+      (voice === rock && robot === scissors)
+    ) {
       result = "YOU ARE WINNER";
       human.classList.add("animate-bounce");
 
       setTimeout(() => {
         human.classList.remove("animate-bounce");
       }, 2500);
-      if (num >= 0) {
-        num++;
-      }
-      human.style.boxShadow = "1px 3px 0px 19px rgba(254,246,246,0.2)";
-    } else if (voice == "img/paper.svg" && robot == "img/rock.svg") {
-      result = "YOU ARE WINNER";
-      human.classList.add("animate-bounce");
 
-      setTimeout(() => {
-        human.classList.remove("animate-bounce");
-      }, 2500);
-      if (num >= 0) {
-        num++;
-      }
-      human.style.boxShadow = "1px 3px 0px 19px rgba(254,246,246,0.2)";
-    } else if (voice == "img/rock.svg" && robot == "img/scissors.svg") {
-      result = "YOU ARE WINNER";
-      human.classList.add("animate-bounce");
-
-      setTimeout(() => {
-        human.classList.remove("animate-bounce");
-      }, 2500);
-      if (num >= 0) {
-        num++;
-      }
+      num++;
       human.style.boxShadow = "1px 3px 0px 19px rgba(254,246,246,0.2)";
     } else {
       result = "ROBOT IS WINNER";
@@ -95,21 +78,21 @@ icons.forEach((icon) => {
         ai.classList.remove("animate-bounce");
       }, 2500);
       ai.style.boxShadow = "1px 3px 0px 19px rgba(254,246,246,0.2)";
-      if ((num = 0)) {
-        num;
-      } else if (num > 0) {
+
+      if (num > 0) {
         num--;
+      } else {
+        num = 0;
       }
     }
 
-    text.innerHTML = `${result}`;
-    schot.innerHTML = `${num}`;
+    text.innerHTML = result;
+    schot.innerHTML = num;
   });
 });
+
+let num = Number(0);
+let result = "";
+
 let score = parseInt(localStorage.getItem("score")) || 0;
 schot.textContent = score;
-
-refreshBtn.addEventListener("click", () => {
-  hiddenNav.classList.remove("block");
-  buttonBox.classList.add("hidden");
-});
